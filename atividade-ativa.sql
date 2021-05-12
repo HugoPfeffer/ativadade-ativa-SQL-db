@@ -27,9 +27,9 @@ CREATE TABLE materia_aluno (
   cod_materia_matuno INTEGER NOT NULL,
   notas FLOAT, 
   aprovado BOOLEAN,
-  FOREIGN KEY(matricula_matuno) REFERENCES aluno(matricula),
-  FOREIGN KEY(cod_materia_matuno) REFERENCES materia(cod_materia),
-  FOREIGN KEY(id_bimestre_matuno) REFERENCES bimestre(id_bimestre),
+  FOREIGN KEY(matricula_matuno) REFERENCES aluno(matricula) ON DELETE CASCADE,
+  FOREIGN KEY(cod_materia_matuno) REFERENCES materia(cod_materia) ON DELETE CASCADE,
+  FOREIGN KEY(id_bimestre_matuno) REFERENCES bimestre(id_bimestre) ON DELETE CASCADE,
   PRIMARY KEY(id_bimestre_matuno, cod_materia_matuno, matricula_matuno)
 );
 
